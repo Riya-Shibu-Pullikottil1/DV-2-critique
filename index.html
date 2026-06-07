@@ -40,9 +40,6 @@
 <!-- starting of 2nd and 3rd chart info -->
   <div class="two-chart-row death-row">
 
-  <div class="chart-box death-chart-box">
-    <div id="death_rate"></div>
-  </div>
 
   <div class="right-stack">
 
@@ -67,9 +64,9 @@
 
 </div>
 
-  <div class="single-chart-box">
-   <div id="hospital_beds_proportional"></div>
- </div>
+  <div class="hospital-map-box">
+  <div id="hospital_beds_proportional"></div>
+</div>
   
  <div class="chart-text-row">
 
@@ -78,17 +75,26 @@
   </div>
 
   
-<div class="chart-story-row">
+<div class="immunisation-section">
 
-  <div class="story-chart-box">
+  <div class="immunisation-chart-box">
     <div id="immunisation_small_multiples"></div>
   </div>
 
-  <div class="story-side-note">
+  <div class="immunisation-text-box">
     <h3>Key immunisation insights</h3>
-    <p>Immunisation coverage is generally high by 2023...</p>
-    <p>MMR shows the weakest average coverage...</p>
-    <p>The lowest overall immunisation year is 2002...</p>
+
+    <p>
+      Immunisation coverage is generally high by 2023, with average reported coverage reaching about 105.9% across the vaccines with available 2023 values.
+    </p>
+
+    <p>
+      MMR shows the weakest average coverage among the consistently reported vaccines, while Polio records the strongest average coverage across the period.
+    </p>
+
+    <p>
+      The lowest overall immunisation year is 2002, when average coverage across diseases was about 69.8%. Polio coverage is around 22.5 percentage points higher than MMR on average.
+    </p>
   </div>
 
 </div>
@@ -177,7 +183,6 @@
 
   <script>
   vegaEmbed("#birth_rate", "vis/birth_rate.vg.json");
-  vegaEmbed("#death_rate", "vis/death_rate.vg.json");
   vegaEmbed("#births_per_death_donut", "vis/births_per_death_donut.vg.json");
   vegaEmbed(
   "#hospital_beds_proportional",

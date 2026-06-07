@@ -70,13 +70,11 @@ body {
 }
 
 .two-chart-row {
-  max-width: 1300px;
+  max-width: 700px;
   margin: 70px auto;
-  padding: 0 35px;
-  display: grid;
-  grid-template-columns: 720px 420px;
-  gap: 36px;
-  align-items: start;
+  padding: 0 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .two-chart-row .chart-box {
@@ -87,6 +85,18 @@ body {
   overflow: hidden;
   display: flex;
   justify-content: center;
+}
+
+.right-stack {
+  width: 100%;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.donut-box {
+  width: 100%;
 }
 
 .death-chart-box {
@@ -333,4 +343,61 @@ html, body {
 
 body {
   margin: 0;
+}
+
+.hospital-map-box {
+  width: fit-content;
+  max-width: 620px;
+  margin: 60px auto;
+  background: white;
+  border-radius: 22px;
+  padding: 18px 22px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.immunisation-section {
+  max-width: 1200px;
+  margin: 70px auto;
+  padding: 0 30px;
+  display: grid;
+  grid-template-columns: 760px 340px;
+  gap: 36px;
+  align-items: start;
+}
+
+.immunisation-chart-box {
+  background: white;
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.immunisation-text-box {
+  border-left: 5px solid #8db600;
+  padding-left: 24px;
+  max-width: 340px;
+}
+
+.immunisation-text-box h3 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #8db600;
+  font-size: 16px;
+  line-height: 1.35;
+  margin: 0 0 18px 0;
+}
+
+.immunisation-text-box p {
+  font-size: 16px;
+  line-height: 1.45;
+  margin: 0 0 16px 0;
+  color: #111;
 }

@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 550,
-  "height": 350,
+  "width": 200,
+  "height": 320,
   "title": "Births by Ethnicity Over Time",
   "data": {
     "url": "data/birth_sex_ethnic_state.csv",
@@ -30,10 +30,17 @@
       "title": "Total Births"
     },
     "color": {
-      "field": "ethnicity",
-      "type": "nominal",
-      "title": "Ethnicity"
-    },
+  "field": "ethnicity",
+  "type": "nominal",
+  "title": "Ethnicity",
+  "legend": {
+    "orient": "bottom",
+    "columns": 3,
+    "titleFontSize": 11,
+    "labelFontSize": 10,
+    "symbolSize": 80
+  }
+},
     "tooltip": [
       {
         "field": "date",
