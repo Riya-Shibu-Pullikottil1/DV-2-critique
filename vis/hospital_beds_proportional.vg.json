@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 820,
-  "height": 430,
+  "height": 460,
 
   "title": {
     "text": "Hospital Bed Capacity Varies Across Malaysian States",
@@ -15,8 +15,8 @@
   "projection": {
   "type": "mercator",
   "center": [109.5, 4],
-  "scale": 1550,
-  "translate": [390, 245]
+  "scale": 2300,
+  "translate": [410, 285]
 },
 
   "layer": [
@@ -189,16 +189,16 @@
           "type": "quantitative",
           "title": "Hospital beds",
           "scale": {
-            "range": [15, 510]
+            "range": [12, 360]
 
           },
          "legend": {
     "titleFontSize": 14,
     "labelFontSize": 12,
     "symbolStrokeWidth": 1,
-    "labelPadding": 8,
-    "offset": 10,
-    "orient": "right"
+    "labelPadding": 6,
+    "offset": 18,
+    "orient": "bottom"
   }
 },
 
