@@ -1,13 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 750,
-  "height": 520,
+  "width": 600,
+  "height": 470,
   "title": {
     "text": "Malaysia's declining birth rate",
     "subtitle": "Births per 1,000 population by state, comparing 2000 and 2023",
     "anchor": "start",
-    "fontSize": 20,
-    "subtitleFontSize": 13
+    "fontSize": 17,
+    "subtitleFontSize": 10
   },
   "data": {
     "url": "data/state_birth_dumbbell_2000_2023_clean.csv",
