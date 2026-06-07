@@ -1,0 +1,116 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": {
+    "text": "Immunisation Coverage Improved Unevenly Across Diseases",
+    "subtitle": "Malaysia, 2000–2023 | Average reported coverage in 2023: 105.9%",
+    "anchor": "start",
+    "fontSize": 20,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#8db600"
+  },
+
+  "data": {
+    "url": "data/infant_immunisation.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "date": "date",
+        "rate": "number"
+      }
+    }
+  },
+
+  "transform": [
+    {
+      "filter": "isValid(datum.rate)"
+    },
+    {
+      "calculate": "datum.disease == 'hep_b' ? 'Hepatitis B' : datum.disease == 'dpt' ? 'DPT' : datum.disease == 'mmr' ? 'MMR' : datum.disease == 'polio' ? 'Polio' : 'Measles'",
+      "as": "disease_label"
+    }
+  ],
+
+  "facet": {
+    "field": "disease_label",
+    "type": "nominal",
+    "title": null,
+    "sort": ["DPT", "Hepatitis B", "Polio", "MMR", "Measles"],
+    "header": {
+      "labelFontSize": 14,
+      "labelFontWeight": "bold"
+    }
+  },
+
+  "columns": 3,
+
+  "spec": {
+    "width": 230,
+    "height": 150,
+
+    "mark": {
+      "type": "line",
+      "point": {
+        "filled": true,
+        "size": 45
+      },
+      "strokeWidth": 3,
+      "color": "#8db600"
+    },
+
+    "encoding": {
+      "x": {
+        "field": "date",
+        "type": "temporal",
+        "timeUnit": "year",
+        "title": "Year",
+        "axis": {
+          "format": "%Y",
+          "labelAngle": 0,
+          "tickCount": 5
+        }
+      },
+
+      "y": {
+        "field": "rate",
+        "type": "quantitative",
+        "title": "Coverage rate (%)",
+        "scale": {
+          "domain": [0, 110]
+        }
+      },
+
+      "tooltip": [
+        {
+          "field": "disease_label",
+          "type": "nominal",
+          "title": "Disease"
+        },
+        {
+          "field": "date",
+          "type": "temporal",
+          "timeUnit": "year",
+          "title": "Year"
+        },
+        {
+          "field": "rate",
+          "type": "quantitative",
+          "title": "Coverage rate",
+          "format": ".1f"
+        }
+      ]
+    }
+  },
+
+  "resolve": {
+    "scale": {
+      "y": "shared"
+    }
+  },
+
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

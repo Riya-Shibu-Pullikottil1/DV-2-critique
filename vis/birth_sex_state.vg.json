@@ -1,0 +1,121 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 850,
+  "height": 520,
+
+  "title": {
+    "text": "Male and Female Births by State",
+    "subtitle": "Total births by sex, using overall ethnicity only, 2000–2023",
+    "anchor": "middle",
+    "fontSize": 26,
+    "subtitleFontSize": 14,
+    "subtitleColor": "#8db600",
+    "fontWeight": "bold"
+  },
+
+  "data": {
+    "url": "data/birth_sex_ethnic_state.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "date": "date",
+        "abs": "number"
+      }
+    }
+  },
+
+  "transform": [
+    {
+      "filter": "datum.ethnicity == 'overall'"
+    },
+    {
+      "filter": "datum.sex != 'both'"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "abs",
+          "as": "total_births"
+        }
+      ],
+      "groupby": ["state", "sex"]
+    },
+    {
+      "calculate": "datum.sex == 'female' ? -datum.total_births : datum.total_births",
+      "as": "signed_births"
+    }
+  ],
+
+  "mark": {
+    "type": "bar"
+  },
+
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": "-x",
+      "title": "State",
+      "axis": {
+        "labelFontSize": 15,
+        "titleFontSize": 17,
+        "labelLimit": 220
+      }
+    },
+
+    "x": {
+      "field": "signed_births",
+      "type": "quantitative",
+      "title": "Number of Births",
+      "axis": {
+        "labelFontSize": 15,
+        "titleFontSize": 17,
+        "format": "s"
+      }
+    },
+
+    "color": {
+      "field": "sex",
+      "type": "nominal",
+      "title": "Sex",
+      "scale": {
+        "domain": ["female", "male"],
+        "range": ["#4C78A8", "#E45756"]
+      },
+      "legend": {
+        "titleFontSize": 17,
+        "labelFontSize": 15,
+        "symbolSize": 180
+      }
+    },
+
+    "tooltip": [
+      {
+        "field": "state",
+        "type": "nominal",
+        "title": "State"
+      },
+      {
+        "field": "sex",
+        "type": "nominal",
+        "title": "Sex"
+      },
+      {
+        "field": "total_births",
+        "type": "quantitative",
+        "title": "Total births",
+        "format": ","
+      }
+    ]
+  },
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "grid": true
+    }
+  }
+}

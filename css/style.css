@@ -1,0 +1,277 @@
+body {
+  background-color: #fdecef;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #222;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.chart-text-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 60px 0;
+}
+
+.chart-box {
+  flex: 2;
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.analysis-box {
+  flex: 1;
+  border-left: 4px solid #8db600;
+  padding-left: 24px;
+}
+
+.analysis-box h3 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 14px;
+  color: #8db600;
+  margin-bottom: 20px;
+}
+
+.analysis-box p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.single-chart-box {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  margin: 60px auto;
+  width: fit-content;
+}
+
+.two-chart-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin: 60px 0;
+}
+
+.small-chart-box {
+  max-width: 420px;
+}
+
+.two-chart-row {
+  display: flex;
+  gap: 32px;
+  margin: 60px 0;
+  align-items: stretch;
+}
+
+.death-chart-box {
+  flex: 1.5;
+}
+
+.right-stack {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.mini-explanation {
+  background: rgba(255, 255, 255, 0.75);
+  border-left: 4px solid #8db600;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.mini-explanation h3 {
+  margin: 0 0 12px 0;
+  color: #8db600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.mini-explanation p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+.small-chart-box {
+  margin: 0;
+}
+
+.centered-chart-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto;
+  width: fit-content;
+  max-width: none;
+}
+
+.centered-chart-box .vega-embed {
+  margin: 0 auto;
+}
+
+.ethnicity-section {
+  max-width: 1500px;
+  margin: 80px auto;
+  padding: 0 40px;
+}
+
+.ethnicity-intro {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 70px;
+  align-items: start;
+  margin-bottom: 36px;
+}
+
+.section-number {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: #0b376d;
+  font-weight: 800;
+  font-size: 17px;
+  margin-bottom: 18px;
+}
+
+.ethnicity-intro h2 {
+  font-size: 40px;
+  line-height: 1.15;
+  margin: 0;
+  color: #111;
+}
+
+.ethnicity-intro p {
+  font-size: 22px;
+  line-height: 1.55;
+  margin: 0;
+  color: #111;
+}
+
+.ethnicity-intro strong {
+  color: #0b376d;
+}
+
+.ethnicity-chart-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+  align-items: stretch;
+}
+
+.ethnicity-chart-box {
+  background: white;
+  border-radius: 18px;
+  padding: 28px 30px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.ethnicity-chart-box .vega-embed {
+  display: flex;
+  justify-content: center;
+}
+
+.centered-chart-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto;
+  width: fit-content;
+  max-width: none;
+  background: white;
+  border-radius: 18px;
+  padding: 28px 34px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+.centered-chart-box .vega-embed {
+  margin: 0 auto;
+}
+.blank-story-box {
+  background: transparent;
+  box-shadow: none;
+}
+.chart-story-row {
+  max-width: 1450px;
+  margin: 80px auto;
+  padding: 0 35px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 42px;
+  align-items: center;
+}
+
+.pyramid-story-row {
+  align-items: start;
+}
+
+.story-chart-box {
+  background: white;
+  border-radius: 22px;
+  padding: 28px 32px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.story-chart-box .vega-embed {
+  margin: 0 auto;
+}
+
+.story-side-note {
+  border-left: 5px solid #8db600;
+  padding-left: 28px;
+  max-width: 620px;
+}
+
+.story-side-note h3 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #8db600;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0 0 24px 0;
+}
+
+.story-side-note p {
+  font-size: 21px;
+  line-height: 1.65;
+  margin: 0 0 22px 0;
+  color: #111;
+}
+
+.pyramid-chart-box {
+  justify-self: start;
+  width: fit-content;
+  max-width: none;
+}
+
+.blank-story-space {
+  min-height: 1px;
+}
+.main-title {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 42px;
+}

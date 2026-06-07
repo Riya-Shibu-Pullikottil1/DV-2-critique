@@ -1,0 +1,108 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 750,
+  "height": 520,
+  "title": {
+    "text": "Malaysia's declining birth rate",
+    "subtitle": "Births per 1,000 population by state, comparing 2000 and 2023",
+    "anchor": "start",
+    "fontSize": 20,
+    "subtitleFontSize": 13
+  },
+  "data": {
+    "url": "data/state_birth_dumbbell_2000_2023_clean.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "birth_rate_2000": "number",
+        "birth_rate_2023": "number",
+        "decline": "number",
+        "pct_decline": "number"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 3,
+        "color": "#b8b8b8"
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "title": "State",
+          "sort": {
+            "field": "decline",
+            "order": "descending"
+          }
+        },
+        "x": {
+          "field": "birth_rate_2000",
+          "type": "quantitative",
+          "title": "Births per 1,000 population"
+        },
+        "x2": {
+          "field": "birth_rate_2023"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 95,
+        "color": "#2c7fb8"
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "decline",
+            "order": "descending"
+          }
+        },
+        "x": {
+          "field": "birth_rate_2000",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "birth_rate_2000", "type": "quantitative", "title": "Birth rate in 2000"},
+          {"field": "birth_rate_2023", "type": "quantitative", "title": "Birth rate in 2023"},
+          {"field": "decline", "type": "quantitative", "title": "Decline"},
+          {"field": "pct_decline", "type": "quantitative", "title": "Percent decline"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 95,
+        "color": "#f28e2b"
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "decline",
+            "order": "descending"
+          }
+        },
+        "x": {
+          "field": "birth_rate_2023",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "birth_rate_2000", "type": "quantitative", "title": "Birth rate in 2000"},
+          {"field": "birth_rate_2023", "type": "quantitative", "title": "Birth rate in 2023"},
+          {"field": "decline", "type": "quantitative", "title": "Decline"},
+          {"field": "pct_decline", "type": "quantitative", "title": "Percent decline"}
+        ]
+      }
+    }
+  ]
+}

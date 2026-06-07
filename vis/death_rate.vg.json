@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 700,
+  "height": 400,
+
+  "title": "Malaysia's Death Rate Has Been Rising",
+
+  "data": {
+    "url": "data/death.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+
+  "mark": {
+    "type": "line",
+    "point": true,
+    "color": "#c0392b"
+  },
+
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "timeUnit": "year",
+      "title": "Year"
+    },
+
+    "y": {
+      "field": "rate",
+      "type": "quantitative",
+      "title": "Death Rate per 1,000 population",
+      "scale": {
+        "zero": false
+      }
+    },
+
+    "tooltip": [
+      {
+        "field": "date",
+        "type": "temporal",
+        "timeUnit": "year",
+        "title": "Year"
+      },
+      {
+        "field": "abs",
+        "type": "quantitative",
+        "title": "Number of Deaths"
+      },
+      {
+        "field": "rate",
+        "type": "quantitative",
+        "title": "Death Rate"
+      }
+    ]
+  }
+}

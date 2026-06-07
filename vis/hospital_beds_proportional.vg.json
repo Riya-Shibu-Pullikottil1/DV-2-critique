@@ -1,0 +1,225 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1350,
+  "height": 780,
+
+  "title": {
+    "text": "Hospital Bed Capacity Varies Across Malaysian States",
+    "subtitle": "Circle area represents total public-sector hospital beds, 2022",
+    "anchor": "start",
+    "fontSize": 20,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#8db600"
+  },
+
+  "projection": {
+    "type": "mercator",
+    "center": [109.5, 4],
+    "scale": 3100
+  },
+
+  "layer": [
+    {
+      "data": {
+        "url": "data/malaysia.state.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+
+      "mark": {
+        "type": "geoshape",
+        "fill": "#fff7f8",
+        "stroke": "#9e8389",
+        "strokeWidth": 1.2
+      }
+    },
+
+    {
+      "data": {
+        "url": "data/hospital_beds.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "date": "date",
+            "beds": "number"
+          }
+        }
+      },
+
+      "transform": [
+        {
+          "filter": "year(datum.date) == 2022"
+        },
+        {
+          "filter": "datum.district == 'All Districts'"
+        },
+        {
+          "filter": "datum.state != 'Malaysia'"
+        },
+        {
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "beds",
+              "as": "total_beds"
+            }
+          ],
+          "groupby": ["state"]
+        },
+        {
+          "lookup": "state",
+          "from": {
+            "data": {
+              "values": [
+                {
+                  "state": "Johor",
+                  "longitude": 103.7,
+                  "latitude": 1.85
+                },
+                {
+                  "state": "Kedah",
+                  "longitude": 100.6,
+                  "latitude": 5.95
+                },
+                {
+                  "state": "Kelantan",
+                  "longitude": 102.15,
+                  "latitude": 5.4
+                },
+                {
+                  "state": "Melaka",
+                  "longitude": 102.3,
+                  "latitude": 2.25
+                },
+                {
+                  "state": "Negeri Sembilan",
+                  "longitude": 102.1,
+                  "latitude": 2.75
+                },
+                {
+                  "state": "Pahang",
+                  "longitude": 102.75,
+                  "latitude": 3.8
+                },
+                {
+                  "state": "Perak",
+                  "longitude": 101.05,
+                  "latitude": 4.75
+                },
+                {
+                  "state": "Perlis",
+                  "longitude": 100.2,
+                  "latitude": 6.45
+                },
+                {
+                  "state": "Pulau Pinang",
+                  "longitude": 100.3,
+                  "latitude": 5.35
+                },
+                {
+                  "state": "Sabah",
+                  "longitude": 117,
+                  "latitude": 5.5
+                },
+                {
+                  "state": "Sarawak",
+                  "longitude": 113,
+                  "latitude": 2.5
+                },
+                {
+                  "state": "Selangor",
+                  "longitude": 101.5,
+                  "latitude": 3.2
+                },
+                {
+                  "state": "Terengganu",
+                  "longitude": 103,
+                  "latitude": 5
+                },
+                {
+                  "state": "W.P. Kuala Lumpur",
+                  "longitude": 101.69,
+                  "latitude": 3.14
+                },
+                {
+                  "state": "W.P. Labuan",
+                  "longitude": 115.23,
+                  "latitude": 5.28
+                },
+                {
+                  "state": "W.P. Putrajaya",
+                  "longitude": 101.7,
+                  "latitude": 2.93
+                }
+              ]
+            },
+            "key": "state",
+            "fields": ["longitude", "latitude"]
+          }
+        },
+        {
+          "filter": "isValid(datum.longitude) && isValid(datum.latitude)"
+        }
+      ],
+
+      "mark": {
+        "type": "circle",
+        "color": "#ef765f",
+        "opacity": 0.72,
+        "stroke": "#a84334",
+        "strokeWidth": 1.2
+      },
+
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+
+        "size": {
+          "field": "total_beds",
+          "type": "quantitative",
+          "title": "Hospital beds",
+          "scale": {
+            "range": [60, 1800]
+
+          },
+         "legend": {
+    "titleFontSize": 18,
+    "labelFontSize": 15,
+    "symbolStrokeWidth": 2,
+    "labelPadding": 12,
+    "offset": 20
+  }
+},
+
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "total_beds",
+            "type": "quantitative",
+            "title": "Hospital beds",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

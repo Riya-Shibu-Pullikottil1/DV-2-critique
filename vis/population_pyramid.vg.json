@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 750,
+  "height": 480,
+  "title": "Malaysia's 2023 Population Structure Shows an Ageing Future",
+  "data": {
+    "url": "data/population_pyramid_2023.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "age",
+      "type": "ordinal",
+      "title": "Age Group",
+      "sort": [
+        "85+",
+        "80-84",
+        "75-79",
+        "70-74",
+        "65-69",
+        "60-64",
+        "55-59",
+        "50-54",
+        "45-49",
+        "40-44",
+        "35-39",
+        "30-34",
+        "25-29",
+        "20-24",
+        "15-19",
+        "10-14",
+        "5-9",
+        "0-4"
+      ]
+    },
+    "x": {
+      "field": "signed_population",
+      "type": "quantitative",
+      "title": "Population (thousands)",
+      "axis": {
+        "labelExpr": "abs(datum.value)"
+      }
+    },
+    "color": {
+      "field": "sex",
+      "type": "nominal",
+      "title": "Sex"
+    },
+    "tooltip": [
+      {"field": "age", "type": "ordinal", "title": "Age group"},
+      {"field": "sex", "type": "nominal", "title": "Sex"},
+      {"field": "population", "type": "quantitative", "title": "Population (000s)"}
+    ]
+  }
+}

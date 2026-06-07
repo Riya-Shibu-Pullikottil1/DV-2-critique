@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 460,
+  "height": 330,
+
+  "title": {
+    "text": "Birth Rate by Ethnicity",
+    "subtitle": "Average births per 1,000 people, 2000–2023",
+    "anchor": "middle",
+    "fontSize": 18,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#8db600"
+  },
+
+  "data": {
+    "url": "data/birth_ethnic_rate_2000_2023.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "total_births": "number",
+        "average_birth_rate_per_1000": "number"
+      }
+    }
+  },
+
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 6
+  },
+
+  "encoding": {
+    "y": {
+      "field": "ethnicity",
+      "type": "nominal",
+      "sort": "-x",
+      "title": "Ethnicity",
+      "axis": {
+        "labelFontSize": 12,
+        "titleFontSize": 13,
+        "labelLimit": 160
+      }
+    },
+
+    "x": {
+      "field": "average_birth_rate_per_1000",
+      "type": "quantitative",
+      "title": "Average births per 1,000 people",
+      "axis": {
+        "labelFontSize": 12,
+        "titleFontSize": 13
+      }
+    },
+
+    "color": {
+      "field": "ethnicity",
+      "type": "nominal",
+      "legend": null
+    },
+
+    "tooltip": [
+      {
+        "field": "ethnicity",
+        "type": "nominal",
+        "title": "Ethnicity"
+      },
+      {
+        "field": "average_birth_rate_per_1000",
+        "type": "quantitative",
+        "title": "Avg births per 1,000",
+        "format": ".2f"
+      },
+      {
+        "field": "total_births",
+        "type": "quantitative",
+        "title": "Total births",
+        "format": ","
+      }
+    ]
+  },
+
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

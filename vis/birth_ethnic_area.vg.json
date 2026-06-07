@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 550,
+  "height": 350,
+  "title": "Births by Ethnicity Over Time",
+  "data": {
+    "url": "data/birth_sex_ethnic_state.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "filter": "datum.sex == 'both'"
+    },
+    {
+      "filter": "datum.ethnicity != 'overall'"
+    }
+  ],
+  "mark": "area",
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "timeUnit": "year",
+      "title": "Year"
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "abs",
+      "type": "quantitative",
+      "title": "Total Births"
+    },
+    "color": {
+      "field": "ethnicity",
+      "type": "nominal",
+      "title": "Ethnicity"
+    },
+    "tooltip": [
+      {
+        "field": "date",
+        "type": "temporal",
+        "timeUnit": "year",
+        "title": "Year"
+      },
+      {
+        "field": "ethnicity",
+        "type": "nominal",
+        "title": "Ethnicity"
+      },
+      {
+        "aggregate": "sum",
+        "field": "abs",
+        "type": "quantitative",
+        "title": "Births"
+      }
+    ]
+  }
+}

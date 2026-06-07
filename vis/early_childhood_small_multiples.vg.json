@@ -1,0 +1,74 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Early Childhood Death Rates Have Changed Unevenly Across Categories",
+  "data": {
+    "url": "data/deaths_early_childhood.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "date": "date",
+        "abs": "number",
+        "rate": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.type != 'total'"
+    }
+  ],
+  "facet": {
+    "field": "type",
+    "type": "nominal",
+    "title": "Death Category"
+  },
+  "columns": 2,
+  "spec": {
+    "width": 320,
+    "height": 180,
+    "mark": {
+      "type": "line",
+      "point": true,
+      "strokeWidth": 2
+    },
+    "encoding": {
+      "x": {
+        "field": "date",
+        "type": "temporal",
+        "timeUnit": "year",
+        "title": "Year"
+      },
+      "y": {
+        "field": "rate",
+        "type": "quantitative",
+        "title": "Death rate",
+        "scale": {
+          "zero": false
+        }
+      },
+      "tooltip": [
+        {
+          "field": "date",
+          "type": "temporal",
+          "timeUnit": "year",
+          "title": "Year"
+        },
+        {
+          "field": "type",
+          "type": "nominal",
+          "title": "Category"
+        },
+        {
+          "field": "abs",
+          "type": "quantitative",
+          "title": "Deaths"
+        },
+        {
+          "field": "rate",
+          "type": "quantitative",
+          "title": "Death rate"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 450,
+  "title": "Birth Rates Are Highest in the East Coast States",
+  "data": {
+    "url": "../data/malaysia.state.geojson"
+  },
+  "transform": [
+    {
+      "calculate": "datum.properties.name",
+      "as": "state_name"
+    },
+    {
+      "lookup": "state_name",
+      "from": {
+        "data": {
+          "url": "../data/state_birth_rate_2023.csv"
+        },
+        "key": "state",
+        "fields": ["births", "population_thousands", "birth_rate_per_1000"]
+      }
+    }
+  ],
+  "projection": {"type": "mercator"},
+  "mark": {
+    "type": "geoshape",
+    "stroke": "white",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "color": {
+      "field": "birth_rate_per_1000",
+      "type": "quantitative",
+      "title": "Births per 1,000 people"
+    },
+    "tooltip": [
+      {"field": "state_name", "type": "nominal", "title": "State"},
+      {"field": "births", "type": "quantitative", "title": "Births"},
+      {"field": "population_thousands", "type": "quantitative", "title": "Population (000s)"},
+      {"field": "birth_rate_per_1000", "type": "quantitative", "title": "Birth rate"}
+    ]
+  }
+}

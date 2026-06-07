@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 750,
+  "height": 420,
+  "title": {
+  "text": "Maternal Death Rates Vary Across Malaysian States",
+  "anchor": "middle",
+  "fontSize": 24,
+  "fontWeight": "bold"
+},
+  "data": {
+    "url": "data/death_maternal_state.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": "rect",
+  "encoding": {
+    "x": {
+  "field": "date",
+  "type": "temporal",
+  "timeUnit": "year",
+  "title": "Year",
+  "axis": {
+    "labelFontSize": 13,
+    "titleFontSize": 15
+  }
+},
+    "y": {
+  "field": "state",
+  "type": "nominal",
+  "title": "State",
+  "axis": {
+    "labelFontSize": 13,
+    "titleFontSize": 15,
+    "labelLimit": 180
+  }
+},
+    "color": {
+      "field": "rate",
+      "type": "quantitative",
+      "title": "Maternal death rate",
+      "scale": {"scheme": "orangered"}
+    },
+    "tooltip": [
+      {"field": "state", "type": "nominal", "title": "State"},
+      {"field": "date", "type": "temporal", "timeUnit": "year", "title": "Year"},
+      {"field": "abs", "type": "quantitative", "title": "Maternal deaths"},
+      {"field": "rate", "type": "quantitative", "title": "Maternal death rate"}
+    ]
+  }
+}

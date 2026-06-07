@@ -1,0 +1,77 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 330,
+  "height": 300,
+  "title": {
+    "text": "2.3 Births for Every 1 Death",
+    "subtitle": "Malaysia, 2023",
+    "anchor": "start",
+    "fontSize": 18,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#8db600"
+  },
+  "data": {
+    "url": "data/births_per_death_2023.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "birth_rate_per_1000": "number",
+        "death_rate_per_1000": "number",
+        "births_per_death_from_rates": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "fold": [
+        "birth_rate_per_1000",
+        "death_rate_per_1000"
+      ],
+      "as": [
+        "metric",
+        "rate"
+      ]
+    },
+    {
+      "calculate": "datum.metric == 'birth_rate_per_1000' ? 'Births' : 'Deaths'",
+      "as": "category"
+    }
+  ],
+  "mark": {
+    "type": "arc",
+    "innerRadius": 80,
+    "outerRadius": 130
+  },
+  "encoding": {
+    "theta": {
+      "field": "rate",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "title": "",
+      "scale": {
+        "range": ["#8db600", "#d95f5f"]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "category",
+        "type": "nominal",
+        "title": "Category"
+      },
+      {
+        "field": "rate",
+        "type": "quantitative",
+        "title": "Rate per 1,000 people"
+      },
+      {
+        "field": "births_per_death_from_rates",
+        "type": "quantitative",
+        "title": "Births per death",
+        "format": ".2f"
+      }
+    ]
+  }
+}
