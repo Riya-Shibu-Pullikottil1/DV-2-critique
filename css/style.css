@@ -12,19 +12,19 @@ body {
 }
 
 .chart-text-row {
-  max-width: 1450px;
+  max-width: 1350px;
   margin: 70px auto;
   padding: 0 35px;
   display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
-  gap: 36px;
+  grid-template-columns: 820px 360px;
+  gap: 45px;
   align-items: start;
 }
 
 .analysis-box {
   border-left: 5px solid #8db600;
   padding-left: 28px;
-  max-width: 480px;
+  max-width: 360px;
 }
 
 .analysis-box h3 {
@@ -33,21 +33,22 @@ body {
   color: #8db600;
   font-size: 18px;
   line-height: 1.4;
+  margin: 0 0 22px 0;
 }
 
 .analysis-box p {
-  font-size: 19px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.55;
+  margin: 0 0 18px 0;
 }
-
 /* other CSS above */
 
 .single-chart-box {
-  max-width: 1200px;
+  max-width: 1050px;
   margin: 70px auto;
   background: white;
   border-radius: 22px;
-  padding: 30px 36px;
+  padding: 28px 34px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   display: flex;
@@ -55,11 +56,11 @@ body {
 }
 
 .two-chart-row {
-  max-width: 1450px;
+  max-width: 1300px;
   margin: 70px auto;
   padding: 0 35px;
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-columns: 720px 420px;
   gap: 36px;
   align-items: start;
 }
@@ -67,9 +68,11 @@ body {
 .two-chart-row .chart-box {
   background: white;
   border-radius: 22px;
-  padding: 28px 32px;
+  padding: 26px 30px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .death-chart-box {
@@ -132,9 +135,9 @@ body {
 }
 
 .ethnicity-section {
-  max-width: 1500px;
+  max-width: 1250px;
   margin: 80px auto;
-  padding: 0 40px;
+  padding: 0 30px;
 }
 
 .ethnicity-intro {
@@ -175,22 +178,20 @@ body {
 .ethnicity-chart-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 34px;
-  align-items: stretch;
+  gap: 28px;
+  align-items: start;
 }
 
 .ethnicity-chart-box {
   background: white;
-  border-radius: 18px;
-  padding: 28px 30px;
+  border-radius: 22px;
+  padding: 24px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
-  min-height: 500px;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
-
 .ethnicity-chart-box .vega-embed {
   display: flex;
   justify-content: center;
@@ -227,19 +228,7 @@ body {
   align-items: center;
 }
 
-.pyramid-story-row {
-  align-items: start;
-}
 
-.pyramid-chart-box {
-  justify-self: start;
-  width: fit-content;
-  max-width: 760px;
-}
-
-.blank-story-space {
-  min-height: 1px;
-}
 
 .story-chart-box {
   background: white;
@@ -258,8 +247,8 @@ body {
 
 .story-side-note {
   border-left: 5px solid #8db600;
-  padding-left: 28px;
-  max-width: 420px;
+  padding-left: 26px;
+  max-width: 380px;
 }
 
 
@@ -269,11 +258,11 @@ body {
   color: #8db600;
   font-size: 17px;
   line-height: 1.4;
-  margin: 0 0 22px 0;
+  margin: 0 0 20px 0;
 }
 
 .story-side-note p {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.55;
   margin: 0 0 18px 0;
   color: #111;
@@ -293,6 +282,18 @@ body {
   margin-top: 50px;
   margin-bottom: 50px;
   font-size: 42px;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+.vega-embed {
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html, body {
