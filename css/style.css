@@ -12,39 +12,52 @@ body {
 }
 
 .chart-text-row {
-  max-width: 1350px;
+  max-width: 1100px;
   margin: 70px auto;
-  padding: 0 35px;
+  padding: 0 30px;
   display: grid;
-  grid-template-columns: 820px 360px;
-  gap: 45px;
+  grid-template-columns: 760px 320px;
+  gap: 32px;
   align-items: start;
+}
+
+.chart-text-row .chart-box {
+  background: white;
+  border-radius: 22px;
+  padding: 24px 28px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .analysis-box {
   border-left: 5px solid #8db600;
-  padding-left: 28px;
-  max-width: 360px;
+  padding-left: 22px;
+  max-width: 300px;
+  overflow: hidden;
 }
 
 .analysis-box h3 {
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   color: #8db600;
-  font-size: 18px;
-  line-height: 1.4;
-  margin: 0 0 22px 0;
+  font-size: 14px;
+  line-height: 1.25;
+  margin: 0 0 18px 0;
 }
 
+
 .analysis-box p {
-  font-size: 18px;
-  line-height: 1.55;
+  font-size: 14px;
+  line-height: 1.35;
   margin: 0 0 18px 0;
+  color: #111;
 }
 /* other CSS above */
 
 .single-chart-box {
-  max-width: 1050px;
+  max-width: 980px;
   margin: 70px auto;
   background: white;
   border-radius: 22px;
@@ -53,6 +66,7 @@ body {
   overflow: hidden;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .two-chart-row {
@@ -177,20 +191,22 @@ body {
 
 .ethnicity-chart-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 470px 470px;
   gap: 28px;
+  justify-content: center;
   align-items: start;
 }
 
 .ethnicity-chart-box {
   background: white;
   border-radius: 22px;
-  padding: 24px;
+  padding: 22px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 360px;
 }
 .ethnicity-chart-box .vega-embed {
   display: flex;
@@ -219,12 +235,12 @@ body {
 }
 
 .chart-story-row {
-  max-width: 1300px;
+  max-width: 900px;
   margin: 70px auto;
-  padding: 0 30px;
+  padding: 0 24px;
   display: grid;
-  grid-template-columns: 720px 420px;
-  gap: 42px;
+  grid-template-columns: 720px 340px;
+  gap: 36px;
   align-items: center;
 }
 
@@ -247,10 +263,11 @@ body {
 
 .story-side-note {
   border-left: 5px solid #8db600;
-  padding-left: 26px;
-  max-width: 380px;
+  padding-left: 24px;
+  width: 340px;
+  max-width: 340px;
+  overflow-wrap: break-word;
 }
-
 
 .story-side-note h3 {
   text-transform: uppercase;
@@ -261,10 +278,11 @@ body {
   margin: 0 0 20px 0;
 }
 
+
 .story-side-note p {
-  font-size: 17px;
-  line-height: 1.55;
-  margin: 0 0 18px 0;
+  font-size: 16px;
+  line-height: 1.45;
+  margin: 0 0 16px 0;
   color: #111;
 }
 
@@ -302,4 +320,17 @@ html, body {
 
 .vega-embed {
   max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
 }
