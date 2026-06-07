@@ -347,7 +347,7 @@ body {
 
 .hospital-map-box {
   width: fit-content;
-  max-width: 620px;
+  max-width: 1050px;
   margin: 60px auto;
   background: white;
   border-radius: 22px;
