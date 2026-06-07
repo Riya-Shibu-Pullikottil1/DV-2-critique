@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <h1 class="main-title">Malaysia's Demographic Transition</h1>
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+ <!-- starting of 1st chart info -->
+
+  <div class="chart-text-row">
+
+  <div class="chart-box">
+    <div id="birth_rate"></div>
+  </div>
+
+  <div class="analysis-box">
+    <h3>How to read this chart</h3>
+
+    <p>
+      Each grey line connects a state's birth rate in 2000 with its birth rate in 2023.
+      The blue dot shows the earlier rate, while the orange dot shows the later rate.
+      Longer lines represent larger declines.
+    </p>
+
+    <p>
+      The chart shows that Malaysia's falling birth rate is not only a national trend.
+      Every state in this comparison recorded fewer births per 1,000 people by 2023.
+    </p>
+
+    <p>
+      However, the decline is uneven. Perak, Johor, Kelantan, Melaka and Kuala Lumpur
+      show some of the largest drops, while Terengganu and Kelantan still remain
+      comparatively higher than many other states in 2023.
+    </p>
+  </div>
+<!-- ending of 1st chart info -->
+</div>
+
+<!-- starting of 2nd and 3rd chart info -->
+  <div class="two-chart-row death-row">
+
+  <div class="chart-box death-chart-box">
+    <div id="death_rate"></div>
+  </div>
+
+  <div class="right-stack">
+
+    <div class="mini-explanation">
+      <h3>2023 snapshot</h3>
+      <p>
+        Malaysia still recorded more births than deaths in 2023.
+      </p>
+      <p>
+        For every 1 death, there were about 2.3 births. This means the population
+        was still naturally increasing, but the margin is becoming smaller.
+      </p>
+    </div>
+
+    <div class="chart-box small-chart-box">
+      <div id="births_per_death_donut"></div>
+    </div>
+
+  </div>
+<!-- info for 2nd and 3rd chart ends -->
+</div>
+
+</div>
+
+  <div class="single-chart-box">
+   <div id="hospital_beds_proportional"></div>
+ </div>
+  
+ <div class="chart-text-row">
+
+  <div class="chart-box">
+    <div id="state_birth_map"></div>
+  </div>
+
+  
+<div class="chart-text-row">
+
+  <div class="chart-box">
+    <div id="immunisation_small_multiples"></div>
+  </div>
+
+  <div class="analysis-box">
+    <h3>Key immunisation insights</h3>
+
+    <p>
+      Immunisation coverage is generally high by 2023, with average reported coverage
+      reaching about 105.9% across the vaccines with available 2023 values.
+    </p>
+
+    <p>
+      MMR shows the weakest average coverage among the consistently reported vaccines,
+      while Polio records the strongest average coverage across the period.
+    </p>
+
+    <p>
+      The lowest overall immunisation year is 2002, when average coverage across
+      diseases was about 69.8%. Polio coverage is around 22.5 percentage points higher
+      than MMR on average.
+    </p>
+  </div>
+
+</div>
+
+</div>
+ <div class="single-chart-box centered-chart-box">
+   <div id="birth_sex_state"></div>
+ </div>
+
+  <section class="ethnicity-section">
+
+  <div class="ethnicity-intro">
+    <div>
+      <p class="section-number">Births by ethnicity</p>
+      <h2>Birth Patterns Differ in Absolute and Relative Terms</h2>
+    </div>
+
+    <p>
+  In absolute terms, <strong>bumi_malay</strong> records the highest number of births across
+  the period. However, when births are adjusted by population size, <strong>other_citizen</strong>
+  records the highest average birth rate per 1,000 people. This shows that the group with the
+  largest total number of births is not always the group with the highest birth rate relative
+  to its population size.
+</p>
+  </div>
+
+  <div class="ethnicity-chart-row">
+
+    <div class="chart-box ethnicity-chart-box">
+      <div id="birth_ethnic_area"></div>
+    </div>
+
+    <div class="chart-box ethnicity-chart-box">
+      <div id="birth_ethnic_rate"></div>
+    </div>
+
+  </div>
+
+</section>
+
+ <div class="single-chart-box centered-chart-box">
+   <div id="maternal_death_heatmap"></div>
+ </div>
+
+  <div class="chart-story-row">
+
+  <div class="story-chart-box">
+    <div id="early_childhood_small_multiples"></div>
+  </div>
+
+  <div class="story-side-note">
+    <h3>Early childhood deaths are not changing equally</h3>
+
+    <p>
+      The small multiples show that early childhood death patterns differ by category.
+      Toddler death rates remain very low across the period, while infant, neonatal and
+      perinatal categories show more visible movement.
+    </p>
+
+    <p>
+      This suggests that Malaysia’s childhood mortality issue is more concentrated around
+      birth and early infancy rather than later childhood.
+    </p>
+  </div>
+
+</div>
+  
+ <div class="chart-story-row pyramid-story-row">
+
+  <div class="story-chart-box pyramid-chart-box">
+    <div id="population_pyramid"></div>
+  </div>
+
+  <div class="blank-story-space">
+  </div>
+
+</div>
+  </div>
+
+  <div class="story-text-box blank-story-box">
+  </div>
+
+</div>
+
+  <script>
+  vegaEmbed("#birth_rate", "vis/birth_rate.vg.json");
+  vegaEmbed("#death_rate", "vis/death_rate.vg.json");
+  vegaEmbed("#births_per_death_donut", "vis/births_per_death_donut.vg.json");
+  vegaEmbed(
+  "#hospital_beds_proportional",
+  "vis/hospital_beds_proportional.vg.json"
+ );
+  vegaEmbed("#immunisation_small_multiples", "vis/immunisation_small_multiples.vg.json");
+  vegaEmbed("#birth_sex_state", "vis/birth_sex_state.vg.json");
+  vegaEmbed("#birth_ethnic_area", "vis/birth_ethnic_area.vg.json");
+  vegaEmbed("#birth_ethnic_rate", "vis/birth_ethnic_rate.vg.json");
+  vegaEmbed("#maternal_death_heatmap", "vis/maternal_death_heatmap.vg.json");
+  vegaEmbed("#early_childhood_small_multiples", "vis/early_childhood_small_multiples.vg.json");
+  
+  vegaEmbed("#population_pyramid", "vis/population_pyramid.vg.json");
+
+
+
+</script>
+</body>
+</html>
+
