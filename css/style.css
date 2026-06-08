@@ -313,6 +313,7 @@ body {
 }
 
 html, body {
+  max-width: 100%;
   overflow-x: hidden;
 }
 
@@ -322,27 +323,6 @@ html, body {
 
 * {
   box-sizing: border-box;
-}
-
-html, body {
-  overflow-x: hidden;
-}
-
-.vega-embed {
-  max-width: 100%;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-body {
-  margin: 0;
 }
 
 .hospital-map-box {
@@ -360,11 +340,11 @@ body {
 }
 
 .immunisation-section {
-  max-width: 1200px;
+  width: min(1180px, 100%);
   margin: 70px auto;
   padding: 0 30px;
   display: grid;
-  grid-template-columns: 760px 340px;
+  grid-template-columns: minmax(0, 760px) minmax(280px, 340px);
   gap: 36px;
   align-items: start;
 }
@@ -378,6 +358,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 0;
+}
+
+.immunisation-chart-box .vega-embed,
+.immunisation-chart-box .vega-embed svg {
+  max-width: 100%;
 }
 
 .immunisation-text-box {

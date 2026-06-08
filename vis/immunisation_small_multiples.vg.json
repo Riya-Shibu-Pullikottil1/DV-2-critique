@@ -45,8 +45,8 @@
   "columns": 3,
 
   "spec": {
-    "width": 180,
-    "height": 130,
+    "width": 160,
+    "height": 125,
 
     "mark": {
       "type": "line",
