@@ -1,10 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "width": 700,
-  "height": 430,
+  "width": 360,
+  "height": 230,
 
-  "title": "Malaysia's Death Rate Has Been Rising",
+  "title": {
+  "text": "Malaysia's Death Rate Has Been Rising",
+  "fontSize": 16
+},
 
   "data": {
     "url": "data/death.csv",
@@ -21,11 +24,16 @@
 
   "encoding": {
     "x": {
-      "field": "date",
-      "type": "temporal",
-      "timeUnit": "year",
-      "title": "Year"
-    },
+  "field": "date",
+  "type": "temporal",
+  "timeUnit": "year",
+  "title": "Year",
+  "axis": {
+    "format": "%Y",
+    "tickCount": 6,
+    "labelAngle": 0
+  }
+},
 
     "y": {
       "field": "rate",
