@@ -39,29 +39,35 @@
 </div>
 
 <!-- starting of 2nd and 3rd chart info -->
-  <div class="two-chart-row death-row">
 
+<section class="death-section">
 
-  <div class="right-stack">
+  <div class="mini-explanation death-explanation">
+    <h3>2023 snapshot</h3>
+    <p>
+      Malaysia still recorded more births than deaths in 2023.
+    </p>
+    <p>
+      For every 1 death, there were about 2.3 births. This means the population
+      was still naturally increasing, but the margin is becoming smaller.
+    </p>
+  </div>
 
-    <div class="mini-explanation">
-      <h3>2023 snapshot</h3>
-      <p>
-        Malaysia still recorded more births than deaths in 2023.
-      </p>
-      <p>
-        For every 1 death, there were about 2.3 births. This means the population
-        was still naturally increasing, but the margin is becoming smaller.
-      </p>
-    </div>
+  <div class="death-chart-grid">
 
-    <div class="chart-box">
+    <div class="chart-box death-donut-box">
       <div id="births_per_death_donut"></div>
     </div>
 
+    <div class="chart-box death-rate-box">
+      <div id="death_rate"></div>
+    </div>
+
   </div>
+
+</section>
+
 <!-- info for 2nd and 3rd chart ends -->
-</div>
 
 
   <div class="hospital-map-box">
@@ -159,11 +165,20 @@
   
  <div class="chart-story-row pyramid-story-row">
 
-  <div class="story-chart-box pyramid-chart-box">
-    <div id="population_pyramid"></div>
+  <div class="pyramid-text-box">
+    <h3>Malaysia is moving toward an ageing population</h3>
+
+    <p>
+      The pyramid shows that Malaysia still has a large working-age population, especially among younger adults.
+    </p>
+
+    <p>
+      However, the upper age groups are becoming more visible. This suggests that Malaysia’s population structure is gradually shifting toward an older society.
+    </p>
   </div>
 
-  <div class="blank-story-space">
+  <div class="story-chart-box pyramid-chart-box">
+    <div id="population_pyramid"></div>
   </div>
 
 </div>
@@ -177,6 +192,7 @@
   <script>
   vegaEmbed("#birth_rate", "vis/birth_rate.vg.json");
   vegaEmbed("#births_per_death_donut", "vis/births_per_death_donut.vg.json");
+  vegaEmbed("#death_rate", "vis/death_rate.vg.json");
   vegaEmbed(
   "#hospital_beds_proportional",
   "vis/hospital_beds_proportional.vg.json"
