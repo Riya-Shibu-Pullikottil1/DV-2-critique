@@ -210,13 +210,13 @@ body {
 .ethnicity-chart-box {
   background: white;
   border-radius: 22px;
-  padding: 22px;
+  padding: 12px 16px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 360px;
+  height: 560px;
 }
 .ethnicity-chart-box .vega-embed {
   display: flex;
@@ -245,16 +245,15 @@ body {
 }
 
 .chart-story-row {
-  max-width: 900px;
+  width: min(1220px, 100%);
   margin: 70px auto;
-  padding: 0 24px;
+  padding: 0 30px;
   display: grid;
-  grid-template-columns: 720px 340px;
-  gap: 36px;
+  grid-template-columns: minmax(0, 780px) minmax(280px, 340px);
+  gap: 34px;
   align-items: center;
+  justify-content: center;
 }
-
-
 
 .story-chart-box {
   background: white;
@@ -274,11 +273,10 @@ body {
 .story-side-note {
   border-left: 5px solid #8db600;
   padding-left: 24px;
-  width: 340px;
+  width: 100%;
   max-width: 340px;
   overflow-wrap: break-word;
 }
-
 .story-side-note h3 {
   text-transform: uppercase;
   letter-spacing: 5px;

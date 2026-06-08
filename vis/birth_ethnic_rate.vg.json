@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 200,
-  "height": 320,
+  "width": 360,
+  "height": 360,
 
   "title": {
     "text": "Birth Rate by Ethnicity",
