@@ -69,43 +69,55 @@ body {
   align-items: center;
 }
 
-.death-section {
-  width: min(1100px, 100%);
+.two-chart-row {
+  max-width: 700px;
   margin: 70px auto;
   padding: 0 30px;
-}
-
-.death-explanation {
-  max-width: 980px;
-  margin: 0 auto 32px auto;
-}
-
-.death-chart-grid {
-  display: grid;
-  grid-template-columns: 470px 570px;
-  gap: 32px;
+  display: flex;
   justify-content: center;
-  align-items: stretch;
 }
 
-.death-donut-box,
-.death-rate-box {
+.two-chart-row .chart-box {
   background: white;
   border-radius: 22px;
-  padding: 18px 20px;
+  padding: 26px 30px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.death-donut-box .vega-embed,
-.death-rate-box .vega-embed,
-.death-donut-box .vega-embed svg,
-.death-rate-box .vega-embed svg {
-  max-width: 100%;
+.right-stack {
+  width: 100%;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
+
+.donut-box {
+  width: 100%;
+}
+
+.death-chart-box {
+  flex: 1.5;
+}
+
+.two-chart-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin: 60px 0;
+}
+
+
+.death-chart-box {
+  flex: 1.5;
+}
+
+
+ 
 
 .mini-explanation {
   background: rgba(255, 255, 255, 0.75);
@@ -147,9 +159,9 @@ body {
 }
 
 .ethnicity-section {
-  width: min(1650px, calc(100% - 100px));
+  max-width: 1250px;
   margin: 80px auto;
-  padding: 0;
+  padding: 0 30px;
 }
 
 .ethnicity-intro {
@@ -189,22 +201,22 @@ body {
 
 .ethnicity-chart-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 44px;
+  grid-template-columns: 470px 470px;
+  gap: 28px;
   justify-content: center;
-  align-items: stretch;
+  align-items: start;
 }
 
 .ethnicity-chart-box {
   background: white;
   border-radius: 22px;
-  padding: 12px 16px;
+  padding: 22px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 560px;
+  min-height: 360px;
 }
 .ethnicity-chart-box .vega-embed {
   display: flex;
@@ -233,15 +245,16 @@ body {
 }
 
 .chart-story-row {
-  width: min(1220px, 100%);
+  max-width: 900px;
   margin: 70px auto;
-  padding: 0 30px;
+  padding: 0 24px;
   display: grid;
-  grid-template-columns: minmax(0, 780px) minmax(280px, 340px);
-  gap: 34px;
+  grid-template-columns: 720px 340px;
+  gap: 36px;
   align-items: center;
-  justify-content: center;
 }
+
+
 
 .story-chart-box {
   background: white;
@@ -261,10 +274,11 @@ body {
 .story-side-note {
   border-left: 5px solid #8db600;
   padding-left: 24px;
-  width: 100%;
+  width: 340px;
   max-width: 340px;
   overflow-wrap: break-word;
 }
+
 .story-side-note h3 {
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -282,49 +296,14 @@ body {
   color: #111;
 }
 
-.pyramid-story-row {
-  width: min(1220px, 100%);
-  margin: 70px auto;
-  padding: 0 30px;
-  display: grid;
-  grid-template-columns: 340px 760px;
-  gap: 36px;
-  align-items: center;
-  justify-content: center;
-}
-
-.pyramid-text-box {
-  border-left: 5px solid #8db600;
-  padding-left: 24px;
-  max-width: 340px;
-}
-
-.pyramid-text-box h3 {
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  color: #8db600;
-  font-size: 16px;
-  line-height: 1.35;
-  margin: 0 0 18px 0;
-}
-
-.pyramid-text-box p {
-  font-size: 16px;
-  line-height: 1.45;
-  margin: 0 0 16px 0;
-  color: #111;
-}
-
 .pyramid-chart-box {
-  justify-self: center;
-  width: 100%;
-  max-width: 760px;
-  padding: 18px 22px;
+  justify-self: start;
+  width: fit-content;
+  max-width: none;
 }
 
-.pyramid-chart-box .vega-embed,
-.pyramid-chart-box .vega-embed svg {
-  max-width: 100%;
+.blank-story-space {
+  min-height: 1px;
 }
 .main-title {
   text-align: center;
@@ -334,7 +313,6 @@ body {
 }
 
 html, body {
-  max-width: 100%;
   overflow-x: hidden;
 }
 
@@ -344,6 +322,27 @@ html, body {
 
 * {
   box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+.vega-embed {
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
 }
 
 .hospital-map-box {
@@ -361,11 +360,11 @@ html, body {
 }
 
 .immunisation-section {
-  width: min(1180px, 100%);
+  max-width: 1200px;
   margin: 70px auto;
   padding: 0 30px;
   display: grid;
-  grid-template-columns: minmax(0, 760px) minmax(280px, 340px);
+  grid-template-columns: 760px 340px;
   gap: 36px;
   align-items: start;
 }
@@ -379,12 +378,6 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 0;
-}
-
-.immunisation-chart-box .vega-embed,
-.immunisation-chart-box .vega-embed svg {
-  max-width: 100%;
 }
 
 .immunisation-text-box {
@@ -407,78 +400,4 @@ html, body {
   line-height: 1.45;
   margin: 0 0 16px 0;
   color: #111;
-}
-
-.radar-section {
-  width: min(1650px, calc(100% - 100px));
-  margin: 80px auto;
-  padding: 0;
-}
-
-.radar-intro-box {
-  background: rgba(255, 255, 255, 0.75);
-  border-left: 5px solid #8db600;
-  border-radius: 22px;
-  padding: 26px 32px;
-  margin: 0 auto 42px auto;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
-}
-
-.radar-intro-box h3 {
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  color: #8db600;
-  font-size: 20px;
-  line-height: 1.35;
-  margin: 0 0 18px 0;
-}
-
-.radar-intro-box p {
-  font-size: 18px;
-  line-height: 1.5;
-  margin: 0;
-  color: #111;
-}
-
-.radar-chart-box {
-  background:white;
-  border-radius: 22px;
-  padding: 26px 34px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.radar-chart-box .vega-embed,
-.radar-chart-box .vega-embed svg {
-  max-width: 100%;
-}
-
-.footer-section {
-  width: min(1500px, calc(100% - 120px));
-  margin: 100px auto 50px auto;
-  padding: 36px 0 20px 0;
-  border-top: 1px solid #ddd6d0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 90px;
-  color: #7a7068;
-}
-
-.footer-column p {
-  font-size: 17px;
-  line-height: 1.55;
-  margin: 0 0 22px 0;
-}
-
-.footer-column strong {
-  color: #0b376d;
-  font-weight: 800;
-}
-
-.footer-column a {
-  color: #7a7068;
-  text-decoration: underline;
 }
