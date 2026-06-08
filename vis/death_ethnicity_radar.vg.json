@@ -1,15 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "width": 520,
-  "height": 470,
+  "width": 620,
+  "height": 520,
 
   "title": {
     "text": "Death Composition Has Shifted Across Ethnic Groups",
     "subtitle": "Share of deaths by ethnicity, Malaysia, selected years",
     "anchor": "middle",
-    "fontSize": 20,
-    "subtitleFontSize": 13,
+    "fontSize": 24,
+    "subtitleFontSize": 14,
     "subtitleColor": "#8db600"
   },
 
@@ -25,23 +25,12 @@
         "strokeWidth": 1
       },
       "encoding": {
-        "x": {
-          "field": "x",
-          "type": "quantitative",
-          "axis": null,
-          "scale": {"domain": [-1.25, 1.25]}
-        },
-        "y": {
-          "field": "y",
-          "type": "quantitative",
-          "axis": null,
-          "scale": {"domain": [-1.25, 1.25]}
-        },
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-1.32, 1.32]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-1.32, 1.32]}},
         "detail": {"field": "ring", "type": "nominal"},
         "order": {"field": "order", "type": "quantitative"}
       }
     },
-
     {
       "data": {
         "url": "data/death_radar_axes.csv",
@@ -53,23 +42,12 @@
         "strokeWidth": 1
       },
       "encoding": {
-        "x": {
-          "field": "x",
-          "type": "quantitative",
-          "axis": null,
-          "scale": {"domain": [-1.25, 1.25]}
-        },
-        "y": {
-          "field": "y",
-          "type": "quantitative",
-          "axis": null,
-          "scale": {"domain": [-1.25, 1.25]}
-        },
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-1.32, 1.32]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-1.32, 1.32]}},
         "x2": {"field": "x2"},
         "y2": {"field": "y2"}
       }
     },
-
     {
       "data": {
         "url": "data/death_radar_axes.csv",
@@ -77,27 +55,16 @@
       },
       "mark": {
         "type": "text",
-        "fontSize": 12,
+        "fontSize": 14,
         "fontWeight": "bold",
         "color": "#333"
       },
       "encoding": {
-        "x": {
-          "field": "label_x",
-          "type": "quantitative",
-          "axis": null,
-          "scale": {"domain": [-1.25, 1.25]}
-        },
-        "y": {
-          "field": "label_y",
-          "type": "quantitative",
-          "axis": null,
-          "scale": {"domain": [-1.25, 1.25]}
-        },
+        "x": {"field": "label_x", "type": "quantitative", "axis": null, "scale": {"domain": [-1.32, 1.32]}},
+        "y": {"field": "label_y", "type": "quantitative", "axis": null, "scale": {"domain": [-1.32, 1.32]}},
         "text": {"field": "label"}
       }
     },
-
     {
       "data": {
         "url": "data/death_ethnicity_radar.csv",
@@ -105,22 +72,12 @@
       },
       "mark": {
         "type": "line",
-        "strokeWidth": 3,
+        "strokeWidth": 3.5,
         "interpolate": "linear"
       },
       "encoding": {
-        "x": {
-          "field": "x",
-          "type": "quantitative",
-          "axis": null,
-          "scale": {"domain": [-1.25, 1.25]}
-        },
-        "y": {
-          "field": "y",
-          "type": "quantitative",
-          "axis": null,
-          "scale": {"domain": [-1.25, 1.25]}
-        },
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-1.32, 1.32]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-1.32, 1.32]}},
         "color": {
           "field": "year",
           "type": "nominal",
@@ -133,7 +90,6 @@
         "order": {"field": "order", "type": "quantitative"}
       }
     },
-
     {
       "data": {
         "url": "data/death_ethnicity_radar.csv",
@@ -144,21 +100,11 @@
       ],
       "mark": {
         "type": "circle",
-        "size": 55
+        "size": 70
       },
       "encoding": {
-        "x": {
-          "field": "x",
-          "type": "quantitative",
-          "axis": null,
-          "scale": {"domain": [-1.25, 1.25]}
-        },
-        "y": {
-          "field": "y",
-          "type": "quantitative",
-          "axis": null,
-          "scale": {"domain": [-1.25, 1.25]}
-        },
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-1.32, 1.32]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-1.32, 1.32]}},
         "color": {
           "field": "year",
           "type": "nominal",
@@ -178,6 +124,11 @@
   ],
 
   "config": {
-    "view": {"stroke": null}
+    "view": {"stroke": null},
+    "legend": {
+      "orient": "bottom",
+      "titleFontSize": 13,
+      "labelFontSize": 12
+    }
   }
 }
