@@ -482,30 +482,3 @@ html, body {
   color: #7a7068;
   text-decoration: underline;
 }
-
-.footer-section {
-  width: min(1500px, calc(100% - 120px));
-  margin: 100px auto 50px auto;
-  padding: 36px 0 20px 0;
-  border-top: 1px solid #ddd6d0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 90px;
-  color: #7a7068;
-}
-
-.footer-column p {
-  font-size: 17px;
-  line-height: 1.55;
-  margin: 0 0 22px 0;
-}
-
-.footer-column strong {
-  color: #0b376d;
-  font-weight: 800;
-}
-
-.footer-column a {
-  color: #7a7068;
-  text-decoration: underline;
-}
