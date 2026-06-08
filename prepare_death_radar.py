@@ -45,7 +45,8 @@ radar["order"] = radar["ethnicity"].map(order_map)
 # Calculate radar coordinates
 n = len(ethnicity_order)
 radar["angle"] = 2 * np.pi * radar["order"] / n
-radar["radius"] = radar["share"] / 100
+radar["radius"] = radar["share"] / 50
+radar["radius"] = radar["radius"].clip(upper=1)
 
 radar["x"] = radar["radius"] * np.sin(radar["angle"])
 radar["y"] = -radar["radius"] * np.cos(radar["angle"])

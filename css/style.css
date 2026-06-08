@@ -408,3 +408,50 @@ html, body {
   margin: 0 0 16px 0;
   color: #111;
 }
+
+.radar-section {
+  width: min(1650px, calc(100% - 100px));
+  margin: 80px auto;
+  padding: 0;
+}
+
+.radar-intro-box {
+  background: rgba(255, 255, 255, 0.75);
+  border-left: 5px solid #8db600;
+  border-radius: 22px;
+  padding: 26px 32px;
+  margin: 0 auto 42px auto;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+}
+
+.radar-intro-box h3 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #8db600;
+  font-size: 20px;
+  line-height: 1.35;
+  margin: 0 0 18px 0;
+}
+
+.radar-intro-box p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+  color: #111;
+}
+
+.radar-chart-box {
+  background: white;
+  border-radius: 22px;
+  padding: 26px 34px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radar-chart-box .vega-embed,
+.radar-chart-box .vega-embed svg {
+  max-width: 100%;
+}
