@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 450,
-  "height": 380,
+  "width": 750,
+  "height": 480,
   "title": "Malaysia's 2023 Population Structure Shows an Ageing Future",
   "data": {
     "url": "data/population_pyramid_2023.csv",

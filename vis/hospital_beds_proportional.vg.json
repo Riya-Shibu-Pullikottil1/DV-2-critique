@@ -6,9 +6,9 @@
   "title": {
     "text": "Hospital Bed Capacity Varies Across Malaysian States",
     "subtitle": "Circle area represents total public-sector hospital beds, 2022",
-    "anchor": "middle",
-    "fontSize": 32,
-    "subtitleFontSize": 18,
+    "anchor": "start",
+    "fontSize": 20,
+    "subtitleFontSize": 13,
     "subtitleColor": "#8db600"
   },
 
