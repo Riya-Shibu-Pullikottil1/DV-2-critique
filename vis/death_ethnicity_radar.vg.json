@@ -1,0 +1,183 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 520,
+  "height": 470,
+
+  "title": {
+    "text": "Death Composition Has Shifted Across Ethnic Groups",
+    "subtitle": "Share of deaths by ethnicity, Malaysia, selected years",
+    "anchor": "middle",
+    "fontSize": 20,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#8db600"
+  },
+
+  "layer": [
+    {
+      "data": {
+        "url": "data/death_radar_grid.csv",
+        "format": {"type": "csv"}
+      },
+      "mark": {
+        "type": "line",
+        "color": "#ddd2c4",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {"domain": [-1.25, 1.25]}
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {"domain": [-1.25, 1.25]}
+        },
+        "detail": {"field": "ring", "type": "nominal"},
+        "order": {"field": "order", "type": "quantitative"}
+      }
+    },
+
+    {
+      "data": {
+        "url": "data/death_radar_axes.csv",
+        "format": {"type": "csv"}
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#ddd2c4",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {"domain": [-1.25, 1.25]}
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {"domain": [-1.25, 1.25]}
+        },
+        "x2": {"field": "x2"},
+        "y2": {"field": "y2"}
+      }
+    },
+
+    {
+      "data": {
+        "url": "data/death_radar_axes.csv",
+        "format": {"type": "csv"}
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#333"
+      },
+      "encoding": {
+        "x": {
+          "field": "label_x",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {"domain": [-1.25, 1.25]}
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {"domain": [-1.25, 1.25]}
+        },
+        "text": {"field": "label"}
+      }
+    },
+
+    {
+      "data": {
+        "url": "data/death_ethnicity_radar.csv",
+        "format": {"type": "csv"}
+      },
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3,
+        "interpolate": "linear"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {"domain": [-1.25, 1.25]}
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {"domain": [-1.25, 1.25]}
+        },
+        "color": {
+          "field": "year",
+          "type": "nominal",
+          "title": "Year",
+          "scale": {
+            "range": ["#2c7fb8", "#f28e2b", "#59a14f", "#a23b16"]
+          }
+        },
+        "detail": {"field": "year", "type": "nominal"},
+        "order": {"field": "order", "type": "quantitative"}
+      }
+    },
+
+    {
+      "data": {
+        "url": "data/death_ethnicity_radar.csv",
+        "format": {"type": "csv"}
+      },
+      "transform": [
+        {"filter": "datum.order < 6"}
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 55
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {"domain": [-1.25, 1.25]}
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {"domain": [-1.25, 1.25]}
+        },
+        "color": {
+          "field": "year",
+          "type": "nominal",
+          "title": "Year",
+          "scale": {
+            "range": ["#2c7fb8", "#f28e2b", "#59a14f", "#a23b16"]
+          }
+        },
+        "tooltip": [
+          {"field": "year", "type": "nominal", "title": "Year"},
+          {"field": "ethnicity", "type": "nominal", "title": "Ethnicity"},
+          {"field": "abs", "type": "quantitative", "title": "Deaths"},
+          {"field": "share", "type": "quantitative", "title": "Share of deaths (%)", "format": ".1f"}
+        ]
+      }
+    }
+  ],
+
+  "config": {
+    "view": {"stroke": null}
+  }
+}

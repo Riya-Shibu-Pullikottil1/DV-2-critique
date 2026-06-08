@@ -162,7 +162,21 @@
   </div>
 
 </div>
-  
+  <section class="radar-section">
+
+  <div class="radar-intro-box">
+    <h3>Death profile by ethnicity</h3>
+
+    <p>
+      This radar chart compares how the share of deaths is distributed across ethnic groups in selected years. It shows composition, not death risk, so larger groups may naturally account for a larger share of total deaths.
+    </p>
+  </div>
+
+  <div class="radar-chart-box">
+    <div id="death_ethnicity_radar"></div>
+  </div>
+
+</section>
  <div class="chart-story-row pyramid-story-row">
 
   <div class="pyramid-text-box">
@@ -182,12 +196,6 @@
   </div>
 
 </div>
-  </div>
-
-  <div class="story-text-box blank-story-box">
-  </div>
-
-</div>
 
   <script>
   vegaEmbed("#birth_rate", "vis/birth_rate.vg.json");
@@ -203,7 +211,7 @@
   vegaEmbed("#birth_ethnic_rate", "vis/birth_ethnic_rate.vg.json");
   vegaEmbed("#maternal_death_heatmap", "vis/maternal_death_heatmap.vg.json");
   vegaEmbed("#early_childhood_small_multiples", "vis/early_childhood_small_multiples.vg.json");
-  
+  vegaEmbed("#death_ethnicity_radar", "vis/death_ethnicity_radar.vg.json");
   vegaEmbed("#population_pyramid", "vis/population_pyramid.vg.json");
 
 
